@@ -9,13 +9,12 @@ A Google Apps Script web application for international students to submit compla
 | `Code.gs` | Apps Script backend, Sheet integration, complaint workflows, notifications and evidence handling |
 | `Index.html` | Student-facing portal |
 | `Admin.html` | International Office dashboard |
-| `Logo_IO.png` | University/office logo asset supplied with the project |
 | `appsscript.json` | Apps Script manifest |
 | `.gitignore` | Excludes local credentials and development files |
 
 ## Deployment (Google Apps Script)
 
-> **This is not a static GitHub Pages site.** GitHub hosts the source code; Apps Script runs the backend and renders the HTML interfaces. Opening the HTML files directly will not make their Apps Script calls work.
+ Opening the HTML files directly will not make their Apps Script calls work.
 
 1. Create a Google Sheet to hold complaint records.
 2. In the Sheet, select **Extensions → Apps Script**. Create a script project bound to this Sheet.
@@ -44,15 +43,7 @@ git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 git push -u origin main
 ```
 
-If the GitHub repository **already exists**, clone it first and copy these project files into the clone; then use `git add -A`, `git commit`, and `git push origin main` instead of `git init`.
-
-## Security and operational notes
-
-- Student names, identifiers, complaints, and evidence may be sensitive. Never commit real student records, private evidence files, administrator keys, or spreadsheet credentials.
-- The `Logo_IO.png` file is retained as supplied. Check that any references to it in the HTML/Apps Script are valid in your deployed project; an image in the GitHub repository is not automatically an Apps Script image resource.
-- The existing backend explicitly sets `XFrameOptionsMode.ALLOWALL`. Assess clickjacking and embedding risks before institutional deployment.
-- Test authentication, permissions, complaint submission, attachments, notification email, and admin actions using non-sensitive sample records before publishing.
 
 ## Technology
 
-Google Apps Script (JavaScript), HTML, CSS, Google Sheets, Google Drive and Google Workspace services.
+Google Apps Script (JavaScript), HTML, CSS, Google Sheets, Google Drive, and Google Workspace services.
